@@ -10,8 +10,8 @@
     "yarn": ">=1.22.0 <2"
   },
   "scripts": {
-    "build": "set NODE_ENV=production&& gulp build",
-    "build:metaimages": "set NODE_ENV=production&& set GENERATE_METAIMAGES=true&& gulp build",
+    "build": "NODE_ENV=production gulp build",
+    "build:metaimages": "NODE_ENV=production GENERATE_METAIMAGES=true gulp build",
     "build:dependencies": "cd ../.. && yarn build:dependencies",
     "clean": "rm -rf build",
     "format:fix": "prettier --write .",

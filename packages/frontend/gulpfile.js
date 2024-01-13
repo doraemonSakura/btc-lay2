@@ -15,8 +15,8 @@ function clean() {
 
 function buildScripts() {
   return multipleExec(
-    `esbuild.cmd --bundle src/scripts/index.ts --outfile=build/scripts/main.js --minify`,
-    'esbuild.cmd --bundle src/scripts/prerenderIndex.ts --outfile=build/scripts/prerender.js --minify',
+    `esbuild --bundle src/scripts/index.ts --outfile=build/scripts/main.js --minify`,
+    'esbuild --bundle src/scripts/prerenderIndex.ts --outfile=build/scripts/prerender.js --minify',
   )
 }
 
@@ -38,7 +38,7 @@ function watchSass() {
 
 function buildStyles() {
   return exec(
-    `tailwindcss.cmd -i ./src/styles/style.css -o ./build/styles/style.css`,
+    `tailwindcss -i ./src/styles/style.css -o ./build/styles/style.css`,
   )
 }
 
