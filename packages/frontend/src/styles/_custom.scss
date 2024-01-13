@@ -1,0 +1,27 @@
+.patch-text-\[18px\] {
+  font-size: 18px;
+}
+
+.patch-items-stretch {
+  align-items: stretch;
+}
+
+.patch-chart-box {
+  position: relative;
+
+  .patch-mask-shade {
+    position: absolute;
+    z-index: 100;
+    left: -5px;
+    top: 0;
+    height: 100%;
+    width: calc(100% + 10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    background-color: rgba(171, 59, 210, 0.2);
+    font-size: 2rem;
+    font-weight: bold;
+  }
+}

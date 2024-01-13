@@ -1,0 +1,7 @@
+node_modules
+build
+src/bridges/multichain-config.json
+src/verified.json
+src/manuallyVerifiedContracts.json
+scripts/multichain/cache.json
+scripts/multichain/intermediate.json
