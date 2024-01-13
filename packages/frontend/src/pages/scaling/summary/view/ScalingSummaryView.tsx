@@ -22,6 +22,8 @@ import {
   ScalingSummaryViewEntry,
 } from '../types'
 
+import mockActiveProjects from '../../../../mock/mock_active_projects.json'
+
 export interface ScalingSummaryViewProps {
   layer2s: ScalingL2SummaryViewEntry[]
   layer3s: ScalingL3SummaryViewEntry[]
@@ -35,9 +37,10 @@ export function ScalingSummaryView({
     getProps: (entry) => getScalingRowProps(entry, 'summary'),
   }
 
-  const activeProjects = layer2s.filter(
-    (item) => !item.isArchived && !item.isUpcoming,
-  )
+  // const activeProjects = layer2s.filter(
+  //   (item) => !item.isArchived && !item.isUpcoming,
+  // )
+  const activeProjects = mockActiveProjects
   const upcomingProjects = [...layer2s, ...layer3s].filter(
     (item) => item.isUpcoming,
   )
@@ -45,7 +48,7 @@ export function ScalingSummaryView({
   const layer3sProjects = layer3s.filter(
     (item) => !item.isArchived && !item.isUpcoming,
   )
-
+  
   return (
     <section className="mt-4 flex flex-col gap-y-2 sm:mt-8">
       {/*<ScalingFilters items={[...layer2s, ...layer3s]} />*/}

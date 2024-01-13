@@ -1,0 +1,180 @@
+[{
+  "name": "BTC",
+  "slug": "btc",
+  "provider": "",
+  "category": "Layer 1",
+  "riskValues": {
+    "dataAvailability": {
+      "value": "On chain",
+      "description": "All of the data needed for proof construction is published on chain.",
+      "sentiment": "good",
+      "sources": [
+        {
+          "contract": "SequencerInbox",
+          "references": [
+            "https://etherscan.io/address/0xD03bFe2CE83632F4E618a97299cc91B1335BB2d9#code#F1#L206"
+          ]
+        }
+      ]
+    },
+    "sequencerFailure": {
+      "value": "Self sequence",
+      "description": "In the event of a sequencer failure, users can force transactions to be included in the project's chain by sending them to L1. There is a 1d delay on this operation.",
+      "sentiment": "good",
+      "sources": [
+        {
+          "contract": "SequencerInbox",
+          "references": [
+            "https://etherscan.io/address/0xD03bFe2CE83632F4E618a97299cc91B1335BB2d9#code#F1#L125",
+            "https://developer.arbitrum.io/sequencer"
+          ]
+        }
+      ]
+    },
+    "stateValidation": {
+      "value": "Fraud proofs (INT)",
+      "description": "Fraud proofs allow WHITELISTED actors watching the chain to prove that the state is incorrect. Interactive proofs (INT) require multiple transactions over time to resolve. The challenge protocol can be subject to delay attacks.",
+      "sentiment": "warning",
+      "sources": [
+        {
+          "contract": "ChallengeManager",
+          "references": [
+            "https://etherscan.io/address/0x1c78B622961f27Ccc2f9BA65E2ba5d5eB301a445#code#F1#L113"
+          ]
+        }
+      ]
+    },
+    "exitWindow": {
+      "value": "2d",
+      "description": "Upgrades are initiated on L2 and have to go first through a 3d delay. Since there is a 1d to force a tx, users have only 2d to exit. If users post a tx after that time, they would need to self propose a root with a 6d 8h 43m 36s delay and then wait for the 6d 8h 43m 36s challenge window, while the upgrade would be confirmed just after the 6d 8h 43m 36s challenge window and the 3d L1 timelock.",
+      "sentiment": "bad",
+      "warning": "The Security Council can upgrade with no delay.",
+      "sources": [
+        {
+          "contract": "OutboxV2",
+          "references": [
+            "https://etherscan.io/address/0x0B9857ae2D4A3DBe74ffE1d7DF045bb7F96E4840#code"
+          ]
+        }
+      ]
+    },
+    "proposerFailure": {
+      "value": "Self propose",
+      "description": "Anyone can become a Proposer after 6d 8h 43m 36s of inactivity from the currently whitelisted Proposers.",
+      "sentiment": "good",
+      "sources": [
+        {
+          "contract": "RollupProxy",
+          "references": [
+            "https://etherscan.io/address/0xA0Ed0562629D45B88A34a342f20dEb58c46C15ff#code#F1#L55"
+          ]
+        }
+      ]
+    }
+  },
+  "tvl": {
+    "value": 11071455134.85,
+    "displayValue": "$11.07B"
+  },
+  "tvlTooltip": "TVL includes canonically bridged, externally bridged and natively minted assets. Check \"Value Locked\" for more information.",
+  "tvlBreakdown":[],
+  "sevenDayChange": "+13.92%",
+  "marketShare": {
+    "value": 0.49368249866376098,
+    "displayValue": "49.37%"
+  },
+  "purposes": [
+    "Universal"
+  ]
+},
+  {
+    "name": "Lightning Network",
+    "slug": "lightning",
+    "provider": "",
+    "category": "Layer 2",
+    "riskValues": {
+      "dataAvailability": {
+        "value": "On chain",
+        "description": "All of the data needed for proof construction is published on chain.",
+        "sentiment": "good",
+        "sources": [
+          {
+            "contract": "SequencerInbox",
+            "references": [
+              "https://etherscan.io/address/0xD03bFe2CE83632F4E618a97299cc91B1335BB2d9#code#F1#L206"
+            ]
+          }
+        ]
+      },
+      "sequencerFailure": {
+        "value": "Self sequence",
+        "description": "In the event of a sequencer failure, users can force transactions to be included in the project's chain by sending them to L1. There is a 1d delay on this operation.",
+        "sentiment": "good",
+        "sources": [
+          {
+            "contract": "SequencerInbox",
+            "references": [
+              "https://etherscan.io/address/0xD03bFe2CE83632F4E618a97299cc91B1335BB2d9#code#F1#L125",
+              "https://developer.arbitrum.io/sequencer"
+            ]
+          }
+        ]
+      },
+      "stateValidation": {
+        "value": "Fraud proofs (INT)",
+        "description": "Fraud proofs allow WHITELISTED actors watching the chain to prove that the state is incorrect. Interactive proofs (INT) require multiple transactions over time to resolve. The challenge protocol can be subject to delay attacks.",
+        "sentiment": "warning",
+        "sources": [
+          {
+            "contract": "ChallengeManager",
+            "references": [
+              "https://etherscan.io/address/0x1c78B622961f27Ccc2f9BA65E2ba5d5eB301a445#code#F1#L113"
+            ]
+          }
+        ]
+      },
+      "exitWindow": {
+        "value": "2d",
+        "description": "Upgrades are initiated on L2 and have to go first through a 3d delay. Since there is a 1d to force a tx, users have only 2d to exit. If users post a tx after that time, they would need to self propose a root with a 6d 8h 43m 36s delay and then wait for the 6d 8h 43m 36s challenge window, while the upgrade would be confirmed just after the 6d 8h 43m 36s challenge window and the 3d L1 timelock.",
+        "sentiment": "bad",
+        "warning": "The Security Council can upgrade with no delay.",
+        "sources": [
+          {
+            "contract": "OutboxV2",
+            "references": [
+              "https://etherscan.io/address/0x0B9857ae2D4A3DBe74ffE1d7DF045bb7F96E4840#code"
+            ]
+          }
+        ]
+      },
+      "proposerFailure": {
+        "value": "Self propose",
+        "description": "Anyone can become a Proposer after 6d 8h 43m 36s of inactivity from the currently whitelisted Proposers.",
+        "sentiment": "good",
+        "sources": [
+          {
+            "contract": "RollupProxy",
+            "references": [
+              "https://etherscan.io/address/0xA0Ed0562629D45B88A34a342f20dEb58c46C15ff#code#F1#L55"
+            ]
+          }
+        ]
+      }
+    },
+    "tvl": {
+      "value": 11071455134.85,
+      "displayValue": "$11.07B"
+    },
+    "tvlTooltip": "TVL includes canonically bridged, externally bridged and natively minted assets. Check \"Value Locked\" for more information.",
+    "tvlBreakdown":[],
+    "sevenDayChange": "+13.92%",
+    "marketShare": {
+      "value": 0.49368249866376098,
+      "displayValue": "49.37%"
+    },
+    "marketShareValue": 0.49368249866376098,
+    "purposes": [
+      "Universal"
+    ]
+  }
+]
