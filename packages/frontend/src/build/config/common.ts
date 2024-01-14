@@ -6,7 +6,7 @@ const GITCOIN_19_END = new Date('2023-11-29T23:59:59Z')
 
 export const common: Omit<Config, 'backend'> = {
   links: {
-    twitter: 'https://twitter.com/l2beat',
+    twitter: 'https://twitter.com/eternal1997L',
     discord: 'https://discord.gg/eaVKXPmtWk',
     github: 'https://github.com/l2beat/l2beat',
     linkedin: 'https://www.linkedin.com/company/l2beat/',
