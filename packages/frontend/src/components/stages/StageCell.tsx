@@ -14,22 +14,26 @@ export function StageCell({ stageConfig }: StageCellProps) {
     return <StageBadge stage={stageConfig.stage} oneSize />
   }
 
-  return (
-    <Tooltip big disabledOnMobile>
-      <TooltipTrigger>
-        <StageBadge
-          stage={stageConfig.stage}
-          icon={
-            stageConfig.stage !== 'UnderReview'
-              ? stageConfig.message?.type
-              : undefined
-          }
-          oneSize
-        />
-      </TooltipTrigger>
-      <TooltipContent>
-        <StageTooltip stageConfig={stageConfig} />
-      </TooltipContent>
-    </Tooltip>
-  )
+  return <div className={`stage ${stageConfig.stage}`}>
+      {stageConfig.stage}
+  </div>
+
+  // return (
+  //   <Tooltip big disabledOnMobile>
+  //     <TooltipTrigger>
+  //       <StageBadge
+  //         stage={stageConfig.stage}
+  //         icon={
+  //           stageConfig.stage !== 'UnderReview'
+  //             ? stageConfig.message?.type
+  //             : undefined
+  //         }
+  //         oneSize
+  //       />
+  //     </TooltipTrigger>
+  //     <TooltipContent>
+  //       <StageTooltip stageConfig={stageConfig} />
+  //     </TooltipContent>
+  //   </Tooltip>
+  // )
 }

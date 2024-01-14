@@ -45,7 +45,7 @@ export function getActiveScalingSummaryColumnsConfig() {
       ),
     },
     {
-      name: 'Custom',
+      name: 'TYPE',
       tooltip: <TypeColumnTooltip />,
       shortName: 'Custom',
       getValue: (project) => (
@@ -56,43 +56,44 @@ export function getActiveScalingSummaryColumnsConfig() {
         rule: 'alphabetical',
       },
     },
-    // {
-    //   name: 'Stage',
-    //   idHref: 'stage' as const,
-    //   tooltip: 'Rollup stage based on its features and maturity.',
-    //   getValue: (project) => <StageCell stageConfig={project.stage} />,
-    //   sorting: {
-    //     getOrderValue: (project) => {
-    //       const stage = project.stage.stage
-    //       if (stage === 'NotApplicable' || stage === 'UnderReview') {
-    //         return undefined
-    //       }
-    //       if (stage === 'Stage 0') {
-    //         if (project.stage.message?.type === 'warning') {
-    //           return 0
-    //         }
-    //
-    //         if (project.stage.message?.type === 'underReview') {
-    //           return 1
-    //         }
-    //
-    //         return 2
-    //       }
-    //       if (stage === 'Stage 1') {
-    //         return 3
-    //       }
-    //       return 4
-    //     },
-    //     rule: 'numeric',
-    //   },
-    // },
+    {
+      name: 'Online',
+      idHref: 'stage' as const,
+      tooltip: 'Rollup stage based on its features and maturity.',
+      getValue: (project) => <StageCell stageConfig={project.stage} />,
+      sorting: {
+        getOrderValue: (project) => {
+          const stage:any = project.stage.stage
+          if (stage === 'NotApplicable' || stage === 'UnderReview') {
+            return undefined
+          }
+          if (stage === 'YES') {
+            return 2
+            // if (project.stage.message?.type === 'warning') {
+            //   return 0
+            // }
+            //
+            // if (project.stage.message?.type === 'underReview') {
+            //   return 1
+            // }
+            //
+            // return 2
+          }
+          if (stage === 'NO') {
+            return 3
+          }
+          return 4
+        },
+        rule: 'numeric',
+      },
+    },
     {
       name: 'Purpose',
       tooltip: 'Functionality supported by this project.',
       getValue: (project) => project.purposes.join(', '),
     },
     {
-      name: 'Total',
+      name: 'Data',
       tooltip:
         'Total value locked in escrow contracts on Ethereum displayed together with a percentage changed compared to 7D ago. Some projects may include externally bridged and natively minted assets.',
       align: 'right',
@@ -114,24 +115,24 @@ export function getActiveScalingSummaryColumnsConfig() {
         defaultState: 'desc',
       },
     },
-    {
-      name: 'Mkt share',
-      tooltip: 'Share of the sum of total value locked of all projects.',
-      align: 'right',
-      minimalWidth: true,
-      headClassName: '!pr-4',
-      getValue: (project) =>
-        project.tvlBreakdown && (
-          <NumberCell className="pr-4">
-            {project.marketShare?.displayValue}
-          </NumberCell>
-        ),
-      //TODO: (Radina) do we need this sorting? its the same as TVL
-      sorting: {
-        getOrderValue: (project) => project.marketShare?.value,
-        rule: 'numeric',
-      },
-    },
+    // {
+    //   name: 'Mkt share',
+    //   tooltip: 'Share of the sum of total value locked of all projects.',
+    //   align: 'right',
+    //   minimalWidth: true,
+    //   headClassName: '!pr-4',
+    //   getValue: (project) =>
+    //     project.tvlBreakdown && (
+    //       <NumberCell className="pr-4">
+    //         {project.marketShare?.displayValue}
+    //       </NumberCell>
+    //     ),
+    //   //TODO: (Radina) do we need this sorting? its the same as TVL
+    //   sorting: {
+    //     getOrderValue: (project) => project.marketShare?.value,
+    //     rule: 'numeric',
+    //   },
+    // },
   ]
 
   return columns

@@ -25,3 +25,22 @@
     font-weight: bold;
   }
 }
+
+.stage.YES{
+  background: var(--text-good);
+  width: 5rem;
+  text-align: center;
+  justify-content: center;
+  border-radius: 0.25rem;
+  color:#fff;
+  line-height: 1;
+}
+.stage.NO{
+  background: var( --text-bad);
+  width: 5rem;
+  text-align: center;
+  justify-content: center;
+  border-radius: 0.25rem;
+  color:#fff;
+  line-height: 1;
+}

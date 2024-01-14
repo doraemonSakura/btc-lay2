@@ -1,8 +1,12 @@
-[{
+[
+  {
   "name": "BTC",
   "slug": "btc",
   "provider": "",
   "category": "Layer 1",
+    "stage": {
+      "stage":"YES"
+    },
   "riskValues": {
     "dataAvailability": {
       "value": "On chain",
@@ -92,6 +96,9 @@
     "slug": "lightning",
     "provider": "",
     "category": "Layer 2",
+    "stage": {
+      "stage":"NO"
+    },
     "riskValues": {
       "dataAvailability": {
         "value": "On chain",
