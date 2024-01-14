@@ -9,12 +9,12 @@ export function About() {
         id="about"
         className="text-2xl font-bold md:text-3xl md:leading-normal"
       >
-        <a href="#about">About L2BEAT</a>
+        <a href="#about">About BTCL2</a>
       </h2>
       <div className="mt-6 grid gap-4 md:grid-cols-2">
         <div className="flex flex-col gap-4">
           <p>
-            L2BEAT is a public goods company dedicated to providing on-chain
+            BTCL2 is a public goods company dedicated to providing on-chain
             transparency.
           </p>
           <p>
